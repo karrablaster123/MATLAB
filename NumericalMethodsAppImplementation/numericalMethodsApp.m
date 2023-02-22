@@ -60,7 +60,7 @@ plotAxes.Layout.Column = [1 4];
     function onRun(~, ~)
         try
             diffFunction = str2func("@(x,y) " + diffFunctionInput.Value);
-            %diffFunction(1, 1)
+            diffFunction(1, 1);
         catch
             error("Bad input to Diff Function");
         end
