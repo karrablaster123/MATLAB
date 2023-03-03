@@ -57,7 +57,7 @@ classdef newtonRaphson
                 jac = double(getJacVal(currW));
                 xRoot = currW - jac\fx;
                 Err = sqrt(sum(fx.*fx));
-                %disp(Err);
+                disp(Err);
                 currW = xRoot;
             end
 
