@@ -60,7 +60,7 @@ classdef newtonRaphson
                 %disp(Err);
                 currW = xRoot;
             end
-
+            xRoot = double(xRoot);
 
 
 
