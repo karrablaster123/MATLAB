@@ -60,6 +60,7 @@ for i = 1:length(K1)
     cc(i) = cc0 + roots(1) + roots(2);
     cd(i) = cd0 - roots(2);
 end
+figure;
 semilogx(K1, ca)
 hold on;
 semilogx(K1, cb)

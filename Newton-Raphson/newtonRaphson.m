@@ -2,10 +2,8 @@ classdef newtonRaphson
 
     properties
         jacobian
-        w0
         w
         functions
-        Error_tol
     end
 
     methods
@@ -31,11 +29,17 @@ classdef newtonRaphson
             getJacobian;
 
             function getJacobian
-                newtRaph.jacobian = sym(zeros([length(newtRaph.functions) length(newtRaph.w)]));
+
+                newtRaph.jacobian = sym(zeros([length(newtRaph.functions) ...
+                    length(newtRaph.w)]));
+
                 for i = 1:length(newtRaph.functions)
                     for j = 1:length(newtRaph.w)
-                        %disp(diff(newtRaph.functions(i), newtRaph.w(j)))
-                        newtRaph.jacobian(i, j) = diff(newtRaph.functions(i), newtRaph.w(j));
+
+                        %disp(diff(newtRaph.functions(i), newtRaph.w(j)))D
+                        
+                        newtRaph.jacobian(i, j) = diff(newtRaph ...
+                            .functions(i), newtRaph.w(j));
                     end
 
                 end
@@ -50,6 +54,12 @@ classdef newtonRaphson
                 w0 (:, 1) {mustBeReal}
                 tol (1, 1) {mustBeReal} = 1e-4
             end
+
+            if(length(this.w) ~= length(w0))
+                error("Initial root var length doesn't match var length " + ...
+                    "of initialisation");
+            end
+
             Err = 1;
             currW = w0;
             while(Err > tol)
