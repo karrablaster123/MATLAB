@@ -42,7 +42,7 @@ for i = 1:length(images.Files)
 end
 %}
 figure
-rgbImg = readimage(images, 2);
+rgbImg = readimage(images, 5);
 imshow(rgbImg,'InitialMagnification','fit');
 for i = 1:length(rgbImg(:, 1, 1))
     for j = 1: length(rgbImg(1, :, 1))
