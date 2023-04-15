@@ -1,5 +1,5 @@
 # MATLAB-CHE-222
-Code for CHE222 course at UofT
+Code for CHE222 (and one file of CHE210 code) course at UofT
 
 CHE222 folder contains lab work. Other folders contain relevant code to the course but with new features!
 
